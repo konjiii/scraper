@@ -10,7 +10,7 @@ from urllib.parse import (
 import requests
 from bs4 import BeautifulSoup
 
-from get_attr import get_link, get_pdf, get_title
+import get_attr
 from helper import get_arxiv_doi
 
 QUERY = "AutoML for Earth Observation"
@@ -19,30 +19,35 @@ CROSSREF_URL = "https://api.crossref.org/works/"
 PAGES = 10
 
 
-def write_csv(papers: list[list[str]]) -> None:
+def write_csv(papers: list[dict[str, str | list[str]]]) -> None:
     with open("papers.csv", "w") as csv_file:
         fieldnames = ["title", "link", "pdf"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
         for paper in papers:
-            writer.writerow({"title": paper[0], "link": paper[1], "pdf": paper[2]})
+            # [title, authors, date, paper_type, doi, publisher, funders, link, pdf]
+            writer.writerow(paper)
 
 
-def get_papers(papers: list[list[str]], soup: BeautifulSoup) -> None:
+def get_papers(papers: list[dict[str, str | list[str]]], soup: BeautifulSoup) -> None:
     for div in soup.find_all("div", {"class": "gs_r gs_or gs_scl"}):
         form = div.find("span", {"class": "gs_ct1"})
         if form is not None and form.get_text() == "[CITATION]":
             continue
 
-        title = get_title(div)
-        link = get_link(div)
-        pdf = get_pdf(div)
+        title = get_attr.get_title(div)
+        link = get_attr.get_link(div)
+        pdf = get_attr.get_pdf(div)
+        authors = ""
+        date = ""
+        paper_type = ""
+        doi = ""
+        publisher = ""
+        funders = ""
 
         doi_code = get_doi(title)
         if doi_code is not None:
             # if a doi was found get more metadata from the crossref api
-            print(title)
-            print(doi_code)
 
             response = requests.get(CROSSREF_URL + doi_code)
 
@@ -53,9 +58,29 @@ def get_papers(papers: list[list[str]], soup: BeautifulSoup) -> None:
             else:
                 with open("success.doi", "a") as file:
                     file.write(doi_code + "\n")
-                print(response.json())
+                json = response.json()
 
-        papers.append([title, link, pdf])
+                title = get_attr.get_title_new(json)
+                authors = get_attr.get_authors(json)
+                date = get_attr.get_date(json)
+                paper_type = get_attr.get_paper_type(json)
+                doi = get_attr.get_doi_url(json)
+                publisher = get_attr.get_publisher(json)
+                funders = get_attr.get_funders(json)
+
+        papers.append(
+            {
+                "title": title,
+                "authors": authors,
+                "date": date,
+                "paper_type": paper_type,
+                "doi": doi,
+                "publisher": publisher,
+                "funders": funders,
+                "link": link,
+                "pdf": pdf,
+            }
+        )
 
 
 def get_doi(title: str) -> None | str:
