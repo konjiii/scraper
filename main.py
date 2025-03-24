@@ -20,8 +20,8 @@ PAGES = 10
 
 
 def write_csv(papers: list[dict[str, str | list[str]]]) -> None:
-    with open("papers.csv", "w") as csv_file:
-        fieldnames = ["title", "link", "pdf"]
+    with open("papers.csv", "w", encoding="utf-8") as csv_file:
+        fieldnames = ["title", "authors", "date", "paper_type", "doi", "publisher", "funders", "link", "pdf"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
         for paper in papers:
@@ -95,6 +95,7 @@ def get_doi(title: str) -> None | str:
     matches = soup.find("p", {"id": "completesearch-info-matches"})
     if matches is None:
         print("failed to search dblp", file=sys.stderr)
+        return None
 
     if matches.text == "no matches":
         return None
@@ -139,6 +140,8 @@ def main() -> None:
 
         soup = BeautifulSoup(response.content, features="html.parser")
 
+        print(soup.prettify())
+        
         get_papers(papers, soup)
 
     write_csv(papers)
