@@ -15,7 +15,6 @@ def main():
         "publisher",
         "funders",
         "link",
-        "pdf",
     ]
 
     papers = list()

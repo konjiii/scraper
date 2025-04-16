@@ -3,6 +3,13 @@ import math
 from collections import Counter
 
 from bokeh.plotting import figure, show
+from nltk import download
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import word_tokenize
+
+download("punkt_tab")
+download("wordnet")
+LEMMATIZER = WordNetLemmatizer()
 
 
 def main():
@@ -25,15 +32,28 @@ def main():
         for row in reader:
             papers.append(row)
 
-    funders = get_field(papers, "funders")
+    titles = get_field(papers, "title")
 
-    funders = [funder for paper in funders for funder in eval(paper)]
+    word_counter = Counter()
 
-    visualize(Counter(funders))
+    for title in titles:
+        for word in word_tokenize(title):
+            word_counter.update([word.lower()])
+
+    toremove = list()
+    for word, count in word_counter.items():
+        if count < 5:
+            toremove.append(word)
+
+    for word in toremove:
+        word_counter.pop(word)
+
+    visualize(word_counter)
 
 
 def visualize(counts: Counter) -> None:
     labels = list(counts.keys())
+    labels.sort(key=lambda word: counts[word], reverse=True)
     values = [counts[label] for label in labels]
 
     p = figure(

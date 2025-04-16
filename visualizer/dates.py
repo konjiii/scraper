@@ -15,7 +15,6 @@ def main():
         "publisher",
         "funders",
         "link",
-        "pdf",
     ]
 
     papers = list()
@@ -37,6 +36,7 @@ def main():
 
 def visualize(counts: Counter) -> None:
     labels = list(counts.keys())
+    labels.sort(reverse=True)
     values = [counts[label] for label in labels]
 
     p = figure(

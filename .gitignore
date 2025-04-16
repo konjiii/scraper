@@ -1,5 +1,4 @@
 *.csv
 *.doi
-*.html
 test.py
 __pycache__

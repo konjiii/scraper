@@ -2,23 +2,25 @@
 
 import csv
 import sys
-from pprint import pprint
-from urllib.parse import (
-    quote,
-)  # to sanitize url
 
 import requests
-from bs4 import BeautifulSoup
+
+# official crossref api
 from crossref_commons.iteration import iterate_publications_as_json
 from crossref_commons.retrieval import get_publication_as_json
+from scholarly import scholarly
+from tqdm import tqdm
 
 import get_attr
+from edit_distance import edit_distance
+
+# unofficial google scholar api
 
 QUERY = "AutoML for Earth Observation"
 DBLP_URL = "https://dblp.org/search?q="
 CROSSREF_URL = "https://api.crossref.org/works/"
 CROSSREF_METADATA_URL = "https://search.crossref.org/search/"
-PAGES = 10
+PAPERS = 100
 
 
 def write_csv(papers: list[dict[str, str | list[str]]]) -> None:
@@ -32,7 +34,6 @@ def write_csv(papers: list[dict[str, str | list[str]]]) -> None:
             "publisher",
             "funders",
             "link",
-            "pdf",
         ]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
@@ -41,15 +42,27 @@ def write_csv(papers: list[dict[str, str | list[str]]]) -> None:
             writer.writerow(paper)
 
 
-def get_papers(papers: list[dict[str, str | list[str]]], soup: BeautifulSoup) -> None:
-    for div in soup.find_all("div", {"class": "gs_r gs_or gs_scl"}):
-        # form = div.find("span", {"class": "gs_ct1"})
+def get_papers() -> list[dict[str, str | list[str]]]:
+    papers = list()
 
-        title = get_attr.get_title(div)
-        if title == "unavailable":
+    results = scholarly.search_pubs(QUERY)
+
+    for i, result in tqdm(enumerate(results), desc="Finding papers...", total=PAPERS):
+        if i > PAPERS:
+            break
+
+        if "bib" not in result.keys() or "title" not in result["bib"].keys():
+            print("missing title:")
+            print(result)
             continue
-        link = get_attr.get_link(div)
-        pdf = get_attr.get_pdf(div)
+
+        title = result["bib"]["title"]
+        if "pub_url" not in result.keys():
+            print("missing url:")
+            print(result)
+            continue
+
+        link = result["pub_url"]
         authors = ""
         date = ""
         paper_type = ""
@@ -72,26 +85,43 @@ def get_papers(papers: list[dict[str, str | list[str]]], soup: BeautifulSoup) ->
                     file.write(doi_code + "\n")
                 json = get_publication_as_json(doi_code)
 
-                print("################")
-                pprint(json)
+                # print("################")
+                # pprint(json)
 
                 try:
+                    title_old = title
                     title = get_attr.get_title_new(json)
+
+                    # find cutoff point of google scholar title
+                    cutoff = None
+                    if "…" in title_old:
+                        cutoff = title_old.find("…")
+                    if (
+                        edit_distance(
+                            title[:cutoff].lower(), title_old[:cutoff].lower()
+                        )
+                        != 0
+                    ):
+                        print("title not the same:")
+                        print(title_old)
+                        print(title)
+                        continue
+
                     authors = get_attr.get_authors(json)
                     date = get_attr.get_date(json)
                     paper_type = get_attr.get_paper_type(json)
                     doi = get_attr.get_doi_url(json)
                     publisher = get_attr.get_publisher(json)
                     funders = get_attr.get_funders(json)
-                    print("################")
-                    print("ATTRIBUTES")
-                    print(title)
-                    print(authors)
-                    print(date)
-                    print(paper_type)
-                    print(doi)
-                    print(publisher)
-                    print(funders)
+                    # print("################")
+                    # print("ATTRIBUTES")
+                    # print(title)
+                    # print(authors)
+                    # print(date)
+                    # print(paper_type)
+                    # print(doi)
+                    # print(publisher)
+                    # print(funders)
                 except Exception as e:
                     print(f"Failed to get attributes: {e}")
                     continue
@@ -106,9 +136,10 @@ def get_papers(papers: list[dict[str, str | list[str]]], soup: BeautifulSoup) ->
                 "publisher": publisher,
                 "funders": funders,
                 "link": link,
-                "pdf": pdf,
             }
         )
+
+    return papers
 
 
 def get_doi(title: str) -> None | str:
@@ -121,18 +152,7 @@ def get_doi(title: str) -> None | str:
 
 
 def main() -> None:
-    papers = list()
-
-    for begin in range(0, 10 * PAGES, 10):
-        scholar = f"https://scholar.google.com/scholar?start={begin}&q={quote(QUERY)}&hl=en&as_sdt=0,5"
-
-        response = requests.get(scholar)
-
-        print(response.status_code)
-
-        soup = BeautifulSoup(response.content, features="html.parser")
-
-        get_papers(papers, soup)
+    papers = get_papers()
 
     write_csv(papers)
 

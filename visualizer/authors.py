@@ -15,7 +15,6 @@ def main():
         "publisher",
         "funders",
         "link",
-        "pdf",
     ]
 
     papers = list()
@@ -32,11 +31,20 @@ def main():
 
     author_counter = Counter(authors)
 
+    toremove = list()
+    for author, count in author_counter.items():
+        if count <= 1:
+            toremove.append(author)
+
+    for author in toremove:
+        author_counter.pop(author)
+
     visualize(author_counter)
 
 
 def visualize(counts: Counter) -> None:
     labels = list(counts.keys())
+    labels.sort(key=lambda word: counts[word], reverse=True)
     values = [counts[label] for label in labels]
 
     p = figure(
