@@ -8,15 +8,15 @@ import requests
 # official crossref api
 from crossref_commons.iteration import iterate_publications_as_json
 from crossref_commons.retrieval import get_publication_as_json
+
+# unofficial google scholar api
 from scholarly import scholarly
 from tqdm import tqdm
 
 import get_attr
 from edit_distance import edit_distance
 
-# unofficial google scholar api
-
-QUERY = "AutoML for Earth Observation"
+QUERY = "(AutoML OR Automated-machine-learning OR NAS OR Neural-Architectural-Search) AND (EO OR Earth Observation)"
 DBLP_URL = "https://dblp.org/search?q="
 CROSSREF_URL = "https://api.crossref.org/works/"
 CROSSREF_METADATA_URL = "https://search.crossref.org/search/"
@@ -34,6 +34,7 @@ def write_csv(papers: list[dict[str, str | list[str]]]) -> None:
             "publisher",
             "funders",
             "link",
+            "abstract",
         ]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
@@ -113,6 +114,7 @@ def get_papers() -> list[dict[str, str | list[str]]]:
                     doi = get_attr.get_doi_url(json)
                     publisher = get_attr.get_publisher(json)
                     funders = get_attr.get_funders(json)
+                    abstract = get_attr.get_abstract(json)
                     # print("################")
                     # print("ATTRIBUTES")
                     # print(title)
@@ -136,6 +138,7 @@ def get_papers() -> list[dict[str, str | list[str]]]:
                 "publisher": publisher,
                 "funders": funders,
                 "link": link,
+                "abstract": abstract,
             }
         )
 

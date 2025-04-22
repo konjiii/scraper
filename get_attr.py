@@ -2,10 +2,10 @@ def get_pdf(div) -> str:
     pdf_div = div.find("div", {"class": "gs_ctg2"})
 
     if pdf_div is None:
-        return "unavailable"
+        return ""
 
     if pdf_div.a.span.get_text() is not None and pdf_div.a.span.get_text() == "[PDF]":
-        return "unavailable"
+        return ""
 
     return pdf_div.a["href"]
 
@@ -14,14 +14,14 @@ def get_link(div) -> str:
     try:
         return div.h3.a["href"]
     except Exception as _:
-        return "unavailable"
+        return ""
 
 
 def get_title(div) -> str:
     try:
         return div.h3.a.get_text()
     except Exception as _:
-        return "unavailable"
+        return ""
 
 
 def get_title_new(json) -> str:
@@ -41,11 +41,11 @@ def get_date(json) -> str:
 
 
 def get_publisher(json) -> str:
-    return json["publisher"]
+    return json.get("publisher", "")
 
 
 def get_paper_type(json) -> str:
-    return json["type"]
+    return json.get("type", "")
 
 
 def get_funders(json) -> list[str]:
@@ -53,12 +53,21 @@ def get_funders(json) -> list[str]:
         funders = [funder["name"] for funder in json["funder"]]
         return funders
     else:
-        return ["unavailable"]
+        return list()
 
 
 def get_authors(json) -> list[str]:
+    authors = dict()
     authors = [
-        f"{author['given'] if 'given' in author.keys() else ''} {author['family']}"
+        f"{author.get('given', '')} {author.get('family', '')}"
         for author in json["author"]
     ]
     return authors
+
+
+def get_abstract(json) -> str:
+    try:
+        abstract = json["abstract"]
+        return abstract[abstract.find("<jats:p>") + 8 : abstract.find("</jats:p>")]
+    except Exception as _:
+        return ""

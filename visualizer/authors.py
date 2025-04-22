@@ -31,6 +31,9 @@ def main():
 
     author_counter = Counter(authors)
 
+    if " " in author_counter.keys():
+        author_counter.pop(" ")
+
     toremove = list()
     for author, count in author_counter.items():
         if count <= 1:

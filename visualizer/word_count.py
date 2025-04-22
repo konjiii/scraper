@@ -4,12 +4,16 @@ from collections import Counter
 
 from bokeh.plotting import figure, show
 from nltk import download
+from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
 download("punkt_tab")
 download("wordnet")
+download("stopwords")
 LEMMATIZER = WordNetLemmatizer()
+STOPWORDS = stopwords.words("english")
+PUNCTUATIONS = [".", ",", ":", ";", "'", '"']
 
 
 def main():
@@ -38,11 +42,15 @@ def main():
 
     for title in titles:
         for word in word_tokenize(title):
-            word_counter.update([word.lower()])
+            word_counter.update(
+                [LEMMATIZER.lemmatize(part.lower()) for part in word.split("-")]
+            )
 
     toremove = list()
     for word, count in word_counter.items():
-        if count < 5:
+        if word in STOPWORDS or word in PUNCTUATIONS:
+            toremove.append(word)
+        elif count < 3:
             toremove.append(word)
 
     for word in toremove:
