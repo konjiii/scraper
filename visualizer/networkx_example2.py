@@ -59,10 +59,25 @@ def visualize(authors: list[list[str]]) -> None:
     attrs = {name: {"counts": count} for name, count in name_counts.items()}
     # for name in adjacency_dict.keys():
 
+    # get all people with less than 2 appearances
+    toremove = list(
+        set([name for name, value in attrs.items() if value["counts"] <= 1])
+    )
+
+    # remove nodes with label name if it is in toremove
+    for name in toremove:
+        adjacency_dict.pop(name)
+
+    # remove the associates from the adjacency list of all nodes
+    for name in adjacency_dict.keys():
+        for name2 in toremove:
+            if name2 in adjacency_dict[name]:
+                adjacency_dict[name].remove(name2)
+
     G = nx.Graph(adjacency_dict)
     nx.set_node_attributes(G, attrs)
 
-    nx.write_gexf(G, f"{GRAPH}.gexf")
+    nx.write_gexf(G, f"{GRAPH}2.gexf")
 
     # nx.draw_shell(G, nlist=authors[:11], with_labels=True)
     # nx.draw_networkx(G, with_labels=True)

@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2025-04-28">
+    <creator>NetworkX 3.4.2</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <attributes mode="static" class="node">
+      <attribute id="0" title="counts" type="long" />
+    </attributes>
+    <nodes>
+      <node id="Nicolas Longépé" label="Nicolas Longépé">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Mitra Baratchi" label="Mitra Baratchi">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Devis Tuia" label="Devis Tuia">
+        <attvalues>
+          <attvalue for="0" value="3" />
+        </attvalues>
+      </node>
+      <node id="Gustau Camps-Valls" label="Gustau Camps-Valls">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Bertrand Le Saux" label="Bertrand Le Saux">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Xiao Xiang Zhu" label="Xiao Xiang Zhu">
+        <attvalues>
+          <attvalue for="0" value="3" />
+        </attvalues>
+      </node>
+      <node id="Jan N. van Rijn" label="Jan N. van Rijn">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Mihai Datcu" label="Mihai Datcu">
+        <attvalues>
+          <attvalue for="0" value="3" />
+        </attvalues>
+      </node>
+      <node id="Thorsten Hoeser" label="Thorsten Hoeser">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Claudia Kuenzer" label="Claudia Kuenzer">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Rene Traore" label="Rene Traore">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Andrés Camero" label="Andrés Camero">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Cheng Peng" label="Cheng Peng">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Yangyang Li" label="Yangyang Li">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Licheng Jiao" label="Licheng Jiao">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Ronghua Shang" label="Ronghua Shang">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Xue Zhong" label="Xue Zhong">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Lihua Zhao" label="Lihua Zhao">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Peng Ren" label="Peng Ren">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Xiang Zhang" label="Xiang Zhang">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Jie Wang" label="Jie Wang">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Lingfei Ma" label="Lingfei Ma">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Jonathan Li" label="Jonathan Li">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="Nicolas Longépé" target="Mitra Baratchi" id="0" />
+      <edge source="Mitra Baratchi" target="Jan N. van Rijn" id="1" />
+      <edge source="Devis Tuia" target="Gustau Camps-Valls" id="2" />
+      <edge source="Devis Tuia" target="Xiao Xiang Zhu" id="3" />
+      <edge source="Devis Tuia" target="Jan N. van Rijn" id="4" />
+      <edge source="Devis Tuia" target="Mihai Datcu" id="5" />
+      <edge source="Devis Tuia" target="Bertrand Le Saux" id="6" />
+      <edge source="Gustau Camps-Valls" target="Xiao Xiang Zhu" id="7" />
+      <edge source="Gustau Camps-Valls" target="Jan N. van Rijn" id="8" />
+      <edge source="Gustau Camps-Valls" target="Mihai Datcu" id="9" />
+      <edge source="Gustau Camps-Valls" target="Bertrand Le Saux" id="10" />
+      <edge source="Bertrand Le Saux" target="Xiao Xiang Zhu" id="11" />
+      <edge source="Bertrand Le Saux" target="Jan N. van Rijn" id="12" />
+      <edge source="Bertrand Le Saux" target="Mihai Datcu" id="13" />
+      <edge source="Xiao Xiang Zhu" target="Jan N. van Rijn" id="14" />
+      <edge source="Xiao Xiang Zhu" target="Mihai Datcu" id="15" />
+      <edge source="Jan N. van Rijn" target="Mihai Datcu" id="16" />
+      <edge source="Thorsten Hoeser" target="Claudia Kuenzer" id="17" />
+      <edge source="Rene Traore" target="Andrés Camero" id="18" />
+      <edge source="Cheng Peng" target="Yangyang Li" id="19" />
+      <edge source="Cheng Peng" target="Licheng Jiao" id="20" />
+      <edge source="Cheng Peng" target="Ronghua Shang" id="21" />
+      <edge source="Yangyang Li" target="Licheng Jiao" id="22" />
+      <edge source="Yangyang Li" target="Ronghua Shang" id="23" />
+      <edge source="Licheng Jiao" target="Ronghua Shang" id="24" />
+      <edge source="Xue Zhong" target="Lihua Zhao" id="25" />
+      <edge source="Xue Zhong" target="Peng Ren" id="26" />
+      <edge source="Xue Zhong" target="Xiang Zhang" id="27" />
+      <edge source="Xue Zhong" target="Jie Wang" id="28" />
+      <edge source="Lihua Zhao" target="Peng Ren" id="29" />
+      <edge source="Lihua Zhao" target="Xiang Zhang" id="30" />
+      <edge source="Lihua Zhao" target="Jie Wang" id="31" />
+      <edge source="Peng Ren" target="Xiang Zhang" id="32" />
+      <edge source="Peng Ren" target="Jie Wang" id="33" />
+      <edge source="Xiang Zhang" target="Jie Wang" id="34" />
+      <edge source="Lingfei Ma" target="Jonathan Li" id="35" />
+    </edges>
+  </graph>
+</gexf>

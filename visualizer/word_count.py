@@ -65,9 +65,9 @@ def visualize(counts: Counter) -> None:
     values = [counts[label] for label in labels]
 
     p = figure(
-        title="publishers of AutoML for EO papers",
-        x_axis_label="publisher",
-        y_axis_label="amount",
+        title="Counts per word in titles of AutoML for EO papers",
+        x_axis_label="word",
+        y_axis_label="count",
         x_range=labels,
     )
 

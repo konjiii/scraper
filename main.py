@@ -1,9 +1,6 @@
 #!/bin/env python3
 
 import csv
-import sys
-
-import requests
 
 # official crossref api
 from crossref_commons.iteration import iterate_publications_as_json
@@ -14,9 +11,9 @@ from scholarly import scholarly
 from tqdm import tqdm
 
 import get_attr
-from edit_distance import edit_distance
+from helper import clean_title
 
-QUERY = "(AutoML OR Automated-machine-learning OR NAS OR Neural-Architectural-Search) AND (EO OR Earth Observation)"
+QUERY = '("Automated Machine Learning" OR "Neural Architecture Search") AND "Earth Observation"'
 DBLP_URL = "https://dblp.org/search?q="
 CROSSREF_URL = "https://api.crossref.org/works/"
 CROSSREF_METADATA_URL = "https://search.crossref.org/search/"
@@ -45,6 +42,7 @@ def write_csv(papers: list[dict[str, str | list[str]]]) -> None:
 
 def get_papers() -> list[dict[str, str | list[str]]]:
     papers = list()
+    dois = list()
 
     results = scholarly.search_pubs(QUERY)
 
@@ -72,61 +70,60 @@ def get_papers() -> list[dict[str, str | list[str]]]:
         funders = ""
 
         doi_code = get_doi(title)
-        if doi_code is not None:
-            # if a doi was found get more metadata from the crossref api
+        if doi_code is None:
+            print("doi not found")
+            continue
 
-            response = requests.get(CROSSREF_URL + doi_code)
+        if doi_code in dois:
+            print(f"duplicate paper: {title}")
+            continue
 
-            if response.status_code == 404:
-                print("doi not found in crossref", file=sys.stderr)
-                with open("failed.doi", "a") as file:
-                    file.write(doi_code)
-            else:
-                with open("success.doi", "a") as file:
-                    file.write(doi_code + "\n")
-                json = get_publication_as_json(doi_code)
+        dois.append(doi_code)
+        # if a doi was found get more metadata from the crossref api
+        json = get_publication_as_json(doi_code)
+        # print("################")
+        # pprint(json)
+        try:
+            title_old = title
+            title = get_attr.get_title_new(json)
 
-                # print("################")
-                # pprint(json)
+            title_old_clean = clean_title(title_old)
+            title_clean = clean_title(title)
+            print(title_old_clean)
+            print(title_clean)
 
-                try:
-                    title_old = title
-                    title = get_attr.get_title_new(json)
+            # find cutoff point of google scholar title
+            cutoff = None
+            if "…" in title_old_clean:
+                cutoff = title_old_clean.find("…")
+            if (
+                title_clean[:cutoff] not in title_old_clean[:cutoff]
+                and title_old_clean[:cutoff] not in title_clean[:cutoff]
+            ):
+                print("title not the same:")
+                print(title_old)
+                print(title)
+                continue
 
-                    # find cutoff point of google scholar title
-                    cutoff = None
-                    if "…" in title_old:
-                        cutoff = title_old.find("…")
-                    if (
-                        edit_distance(
-                            title[:cutoff].lower(), title_old[:cutoff].lower()
-                        )
-                        != 0
-                    ):
-                        print("title not the same:")
-                        print(title_old)
-                        print(title)
-                        continue
-
-                    authors = get_attr.get_authors(json)
-                    date = get_attr.get_date(json)
-                    paper_type = get_attr.get_paper_type(json)
-                    doi = get_attr.get_doi_url(json)
-                    publisher = get_attr.get_publisher(json)
-                    funders = get_attr.get_funders(json)
-                    abstract = get_attr.get_abstract(json)
-                    # print("################")
-                    # print("ATTRIBUTES")
-                    # print(title)
-                    # print(authors)
-                    # print(date)
-                    # print(paper_type)
-                    # print(doi)
-                    # print(publisher)
-                    # print(funders)
-                except Exception as e:
-                    print(f"Failed to get attributes: {e}")
-                    continue
+            authors = get_attr.get_authors(json)
+            date = get_attr.get_date(json)
+            paper_type = get_attr.get_paper_type(json)
+            doi = get_attr.get_doi_url(json)
+            publisher = get_attr.get_publisher(json)
+            funders = get_attr.get_funders(json)
+            abstract = get_attr.get_abstract(json)
+            # print("################")
+            # print("ATTRIBUTES")
+            # print(title)
+            # print(authors)
+            # print(date)
+            # print(paper_type)
+            # print(doi)
+            # print(publisher)
+            # print(funders)
+        except Exception as e:
+            print(f"Failed to get attributes: {e}")
+            continue
 
         papers.append(
             {

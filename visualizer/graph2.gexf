@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2025-04-28">
+    <creator>NetworkX 3.4.2</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <attributes mode="static" class="node">
+      <attribute id="0" title="counts" type="long" />
+    </attributes>
+    <nodes>
+      <node id="Mitra Baratchi" label="Mitra Baratchi">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Bertrand Le Saux" label="Bertrand Le Saux">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Yong Pang" label="Yong Pang">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Liangpei Zhang" label="Liangpei Zhang">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Antonio Plaza" label="Antonio Plaza">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Bormin Huang" label="Bormin Huang">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Mario Parente" label="Mario Parente">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Qian Du" label="Qian Du">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+      <node id="Paul Gader" label="Paul Gader">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="Antonio Plaza" target="Bormin Huang" id="0" />
+      <edge source="Antonio Plaza" target="Mario Parente" id="1" />
+      <edge source="Antonio Plaza" target="Qian Du" id="2" />
+      <edge source="Antonio Plaza" target="Paul Gader" id="3" />
+      <edge source="Mario Parente" target="Qian Du" id="4" />
+      <edge source="Mario Parente" target="Paul Gader" id="5" />
+      <edge source="Qian Du" target="Paul Gader" id="6" />
+    </edges>
+  </graph>
+</gexf>
