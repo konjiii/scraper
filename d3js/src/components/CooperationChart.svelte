@@ -6,81 +6,116 @@
 
   const id = "CooperationGraph";
   // SVG dimensions
-  const margin = { top: 20, right: 20, bottom: 50, left: 20 };
-  const width = 800 - margin.left - margin.right;
+  const margin = { top: 20, right: 20, bottom: 20, left: 20 };
+  const width = 1600 - margin.left - margin.right;
   const height = 800 - margin.top - margin.bottom;
 
+  const authors = jsonData.map((item) => item["authors"]);
+
+  interface Node {
+    id: string;
+    count: number;
+  }
+
+  interface Link {
+    source: string;
+    target: string;
+  }
+
+  interface Graph {
+    nodes: Node[];
+    links: Link[];
+  }
+
+  function updateNodes(nodes: Node[], id: string) {
+    nodes.forEach((item, idx, arr) => {
+      if (item.id == id) {
+        arr[idx].count++;
+        return;
+      }
+    });
+
+    const newNode: Node = { id: id, count: 1 };
+    nodes.push(newNode);
+  }
+
+  function updateLinks(links: Link[], author: string, authors: string[]) {
+    authors.forEach((name) => {
+      if (name == author) {
+        return;
+      }
+
+      for (let i = 0; i < links.length; i++) {
+        if (links[i].source == author && links[i].target == name) {
+          return;
+        }
+      }
+      const newLink: Link = { source: author, target: name };
+      links.push(newLink);
+    });
+  }
+
+  const graph: Graph = { nodes: [], links: [] };
+  authors.forEach((item) => {
+    item.forEach((name) => {
+      updateNodes(graph.nodes, name);
+      updateLinks(graph.links, name, item);
+    });
+  });
+
   onMount(() => {
-    var svg = d3
+    const color = d3.scaleOrdinal(d3.schemeCategory10);
+    const nodes = graph.nodes.map((d) => ({ ...d }));
+    const links = graph.links.map((d) => ({ ...d }));
+
+    const simulation = d3
+      .forceSimulation(nodes)
+      .force(
+        "link",
+        d3.forceLink(links).id((d) => d.id),
+      )
+      .force("charge", d3.forceManyBody())
+      .force("x", d3.forceX())
+      .force("y", d3.forceY());
+
+    const svg = d3
       .select(`#${id}`)
       .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
+      .attr("viewBox", [-width / 2, -height / 2, width, height])
+      .attr("style", "max-width: 100%; height: auto;")
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.json(
-      "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_network.json",
-      function (data) {
-        // Initialize the links
-        var link = svg
-          .selectAll("line")
-          .data(data.links)
-          .enter()
-          .append("line")
-          .style("stroke", "#aaa");
+    const link = svg
+      .append("g")
+      .attr("stroke", "#999")
+      .attr("stroke-opacity", 0.6)
+      .selectAll("line")
+      .data(links)
+      .join("line")
+      .attr("stroke-width", 2);
 
-        // Initialize the nodes
-        var node = svg
-          .selectAll("circle")
-          .data(data.nodes)
-          .enter()
-          .append("circle")
-          .attr("r", 20)
-          .style("fill", "#69b3a2");
+    const node = svg
+      .append("g")
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 1.5)
+      .selectAll("circle")
+      .data(nodes)
+      .join("circle")
+      .attr("r", 5)
+      .attr("fill", (d) => color(d.count));
 
-        // Let's list the force we wanna apply on the network
-        var simulation = d3
-          .forceSimulation(data.nodes) // Force algorithm is applied to data.nodes
-          .force(
-            "link",
-            d3
-              .forceLink() // This force provides links between nodes
-              .id(function (d) {
-                return d.id;
-              }) // This provide  the id of a node
-              .links(data.links), // and this the list of links
-          )
-          .force("charge", d3.forceManyBody().strength(-400)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
-          .force("center", d3.forceCenter(width / 2, height / 2)) // This force attracts nodes to the center of the svg area
-          .on("end", ticked);
+    simulation.on("tick", () => {
+      link
+        .attr("x1", (d) => d.source.x)
+        .attr("y1", (d) => d.source.y)
+        .attr("x2", (d) => d.target.x)
+        .attr("y2", (d) => d.target.y);
 
-        // This function is run at each iteration of the force algorithm, updating the nodes position.
-        function ticked() {
-          link
-            .attr("x1", function (d) {
-              return d.source.x;
-            })
-            .attr("y1", function (d) {
-              return d.source.y;
-            })
-            .attr("x2", function (d) {
-              return d.target.x;
-            })
-            .attr("y2", function (d) {
-              return d.target.y;
-            });
-
-          node
-            .attr("cx", function (d) {
-              return d.x + 6;
-            })
-            .attr("cy", function (d) {
-              return d.y - 6;
-            });
-        }
-      },
-    );
+      node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+    });
   });
 </script>
 
