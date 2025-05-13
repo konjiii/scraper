@@ -1,6 +1,6 @@
 #!/bin/env python3
 
-import csv
+import json
 
 # official crossref api
 from crossref_commons.iteration import iterate_publications_as_json
@@ -21,23 +21,8 @@ PAPERS = 100
 
 
 def write_csv(papers: list[dict[str, str | list[str]]]) -> None:
-    with open("papers.csv", "w", encoding="utf-8") as csv_file:
-        fieldnames = [
-            "title",
-            "authors",
-            "date",
-            "paper_type",
-            "doi",
-            "publisher",
-            "funders",
-            "link",
-            "abstract",
-        ]
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        writer.writeheader()
-        for paper in papers:
-            # [title, authors, date, paper_type, doi, publisher, funders, link, pdf]
-            writer.writerow(paper)
+    with open("papers.json", "w", encoding="utf-8") as file:
+        json.dump(papers, file, indent=2)
 
 
 def get_papers() -> list[dict[str, str | list[str]]]:
