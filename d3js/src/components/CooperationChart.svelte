@@ -4,74 +4,88 @@
   import { StopwordsEn, StemmerEn } from "@nlpjs/lang-en";
   import { onMount } from "svelte";
 
-  const id = "wordCount";
-  const stemmer = new StemmerEn();
-  stemmer.stopwords = new StopwordsEn();
-  const data: Map<String, number> = new Map();
+  const id = "CooperationGraph";
   // SVG dimensions
   const margin = { top: 20, right: 20, bottom: 50, left: 20 };
   const width = 800 - margin.left - margin.right;
   const height = 800 - margin.top - margin.bottom;
 
-  jsonData.forEach((item) => {
-    const title = item["title"];
-
-    // normalize, tokenize, stem, and remove stopwords
-    const words: String[] = stemmer.tokenizeAndStem(title, false);
-
-    words.forEach((word) => {
-      data.set(word, (data.get(word) || 0) + 1);
-    });
-  });
-
-  // get sorted list of word count pairs with count above 4
-  const top = [...data.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .filter((entry) => entry[1] >= 5);
-
-  // split words and counts into two arrays
-  const words = top.map((entry) => entry[0]);
-
   onMount(() => {
-    const svg = d3
+    var svg = d3
       .select(`#${id}`)
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
       .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`);
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    // x axis
-    const xAxis = d3.scaleBand().domain(words).range([0, width]).padding(0.2);
-    svg
-      .append("g")
-      .attr("transform", `translate(0,${height})`)
-      .call(d3.axisBottom(xAxis))
-      .selectAll("text")
-      .style("text-anchor", "start")
-      .attr("dx", "5")
-      .attr("dy", "5")
-      .attr("transform", "rotate(45)");
+    d3.json(
+      "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_network.json",
+      function (data) {
+        // Initialize the links
+        var link = svg
+          .selectAll("line")
+          .data(data.links)
+          .enter()
+          .append("line")
+          .style("stroke", "#aaa");
 
-    // x label
+        // Initialize the nodes
+        var node = svg
+          .selectAll("circle")
+          .data(data.nodes)
+          .enter()
+          .append("circle")
+          .attr("r", 20)
+          .style("fill", "#69b3a2");
 
-    // y axis
-    const yAxis = d3.scaleLinear().domain([0, 30]).range([height, 0]);
-    svg.append("g").call(d3.axisLeft(yAxis));
+        // Let's list the force we wanna apply on the network
+        var simulation = d3
+          .forceSimulation(data.nodes) // Force algorithm is applied to data.nodes
+          .force(
+            "link",
+            d3
+              .forceLink() // This force provides links between nodes
+              .id(function (d) {
+                return d.id;
+              }) // This provide  the id of a node
+              .links(data.links), // and this the list of links
+          )
+          .force("charge", d3.forceManyBody().strength(-400)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+          .force("center", d3.forceCenter(width / 2, height / 2)) // This force attracts nodes to the center of the svg area
+          .on("end", ticked);
 
-    // bars
-    svg
-      .selectAll(".bar")
-      .data(words)
-      .enter()
-      .append("rect")
-      .attr("x", (word: string) => xAxis(word))
-      .attr("y", (word: string) => yAxis(data.get(word)))
-      .attr("width", xAxis.bandwidth())
-      .attr("height", (word: string) => height - yAxis(data.get(word)))
-      .attr("fill", "steelblue");
+        // This function is run at each iteration of the force algorithm, updating the nodes position.
+        function ticked() {
+          link
+            .attr("x1", function (d) {
+              return d.source.x;
+            })
+            .attr("y1", function (d) {
+              return d.source.y;
+            })
+            .attr("x2", function (d) {
+              return d.target.x;
+            })
+            .attr("y2", function (d) {
+              return d.target.y;
+            });
+
+          node
+            .attr("cx", function (d) {
+              return d.x + 6;
+            })
+            .attr("cy", function (d) {
+              return d.y - 6;
+            });
+        }
+      },
+    );
   });
 </script>
 
 <div>
-  <p>Word count</p>
+  <p>Cooperation graph between authors</p>
   <svg
     {id}
     width={width + margin.left + margin.right}
