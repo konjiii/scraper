@@ -1,0 +1,17 @@
+---
+config:
+      theme: redux
+---
+flowchart LR
+      A(["Query"]) --> B["Retrieve paper from Google Scholar"]
+      B --> C{"Missing title or url?"}
+      C -- yes --> B
+      C -- no --> D["Search crossref for DOI using title"]
+      D --> E{"DOI was found?"}
+      E -- no --> B
+      E -- yes --> I{"DOI was seen already?"}
+      I -- yes --> B
+      I -- no --> F["Get all attributes as json from crossref using DOI"]
+      F --> G{"Google Scholar and Crossref title same?"}
+      G -- no --> B
+      G -- yes --> H["Save paper in papers.json"]

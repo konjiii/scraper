@@ -20,7 +20,7 @@ CROSSREF_METADATA_URL = "https://search.crossref.org/search/"
 PAPERS = 100
 
 
-def write_csv(papers: list[dict[str, str | list[str]]]) -> None:
+def write_json(papers: list[dict[str, str | list[str]]]) -> None:
     with open("papers.json", "w", encoding="utf-8") as file:
         json.dump(papers, file, indent=2)
 
@@ -74,8 +74,6 @@ def get_papers() -> list[dict[str, str | list[str]]]:
 
             title_old_clean = clean_title(title_old)
             title_clean = clean_title(title)
-            print(title_old_clean)
-            print(title_clean)
 
             # find cutoff point of google scholar title
             cutoff = None
@@ -139,7 +137,7 @@ def get_doi(title: str) -> None | str:
 def main() -> None:
     papers = get_papers()
 
-    write_csv(papers)
+    write_json(papers)
 
 
 if __name__ == "__main__":
