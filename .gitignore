@@ -1,6 +1,5 @@
 *.csv
 *.doi
-papers.json
 test.json
 test.py
 __pycache__

@@ -1,0 +1,1280 @@
+[
+  {
+    "title": "AutoML-Based Neural Architecture Search for Object Recognition in Satellite Imagery",
+    "authors": [
+      "Povilas Gudzius",
+      "Olga Kurasova",
+      "Vytenis Darulis",
+      "Ernestas Filatovas"
+    ],
+    "date": "2022-12-24",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.3390/rs15010091",
+    "publisher": "MDPI AG",
+    "funders": [
+      "Research Council of Lithuania (LMTLT)"
+    ],
+    "link": "https://www.mdpi.com/2072-4292/15/1/91",
+    "abstract": "Advancements in optical satellite hardware and lowered costs for satellite launches raised the high demand for geospatial intelligence. The object recognition problem in multi-spectral satellite imagery carries dataset properties unique to this problem. Perspective distortion, resolution variability, data spectrality, and other features make it difficult for a specific human-invented neural network to perform well on a dispersed type of scenery, ranging data quality, and different objects. UNET, MACU, and other manually designed network architectures deliver high-performance results for accuracy and prediction speed in large objects. However, once trained on different datasets, the performance drops and requires manual recalibration or further configuration testing to adjust the neural network architecture. To solve these issues, AutoML-based techniques can be employed. In this paper, we focus on Neural Architecture Search that is capable of obtaining a well-performing network configuration without human manual intervention. Firstly, we conducted detailed testing on the top four performing neural networks for object recognition in satellite imagery to compare their performance: FastFCN, DeepLabv3, UNET, and MACU. Then we applied and further developed a Neural Architecture Search technique for the best-performing manually designed MACU by optimizing a search space at the artificial neuron cellular level of the network. Several NAS-MACU versions were explored and evaluated. Our developed AutoML process generated a NAS-MACU neural network that produced better performance compared with MACU, especially in a low-information intensity environment. The experimental investigation was performed on our annotated and updated publicly available satellite imagery dataset. We can state that the application of the Neural Architecture Search procedure has the capability to be applied across various datasets and object recognition problems within the remote sensing research field."
+  },
+  {
+    "title": "AutoSR4EO: An AutoML Approach to Super-Resolution for Earth Observation Images",
+    "authors": [
+      "Julia W\u0105sala",
+      "Suzanne Marselis",
+      "Laurens Arp",
+      "Holger Hoos",
+      "Nicolas Long\u00e9p\u00e9",
+      "Mitra Baratchi"
+    ],
+    "date": "2024-1-23",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.3390/rs16030443",
+    "publisher": "MDPI AG",
+    "funders": [
+      "Dutch Research Council (NWO)",
+      "EU Horizon 2020 research and innovation programme",
+      "ESA OSIP"
+    ],
+    "link": "https://www.mdpi.com/2072-4292/16/3/443",
+    "abstract": "Super-resolution (SR), a technique to increase the resolution of images, is a pre-processing step in the pipelines of applications of Earth observation (EO) data. The manual design and optimisation of SR models that are specific to every possible EO use case is a laborious process that creates a bottleneck for EO analysis. In this work, we develop an automated machine learning (AutoML) method to automate the creation of dataset-specific SR models. AutoML is the study of the automatic design of high-performance machine learning models. We present the following contributions. (i) We propose AutoSR4EO, an AutoML method for automatically constructing neural networks for SR. We design a search space based on state-of-the-art residual neural networks for SR and incorporate transfer learning. Our search space is extendable, making it possible to adapt AutoSR4EO to future developments in the field. (ii) We introduce a new real-world single-image SR (SISR) dataset, called SENT-NICFI. (iii) We evaluate the performance of AutoSR4EO on four different datasets against the performance of four state-of-the-art baselines and a vanilla AutoML SR method, with AutoSR4EO achieving the highest average ranking. Our results show that AutoSR4EO performs consistently well over all datasets, demonstrating that AutoML is a promising method for improving SR techniques for EO images."
+  },
+  {
+    "title": "AutoML: A systematic review on automated machine learning with neural architecture search",
+    "authors": [
+      "Imrus Salehin",
+      "Md. Shamiul Islam",
+      "Pritom Saha",
+      "S.M. Noman",
+      "Azra Tuni",
+      "Md. Mehedi Hasan",
+      "Md. Abu Baten"
+    ],
+    "date": "2024-1",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.jiixd.2023.10.002",
+    "publisher": "Elsevier BV",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/S2949715923000604",
+    "abstract": ""
+  },
+  {
+    "title": "Deep Learning and Earth Observation to Support the Sustainable Development Goals: Current approaches, open challenges, and future opportunities",
+    "authors": [
+      "Claudio Persello",
+      "Jan Dirk Wegner",
+      "Ronny Hansch",
+      "Devis Tuia",
+      "Pedram Ghamisi",
+      "Mila Koeva",
+      "Gustau Camps-Valls"
+    ],
+    "date": "2022-6",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/mgrs.2021.3136100",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "European Research Council",
+      "European Union"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/9681713/",
+    "abstract": ""
+  },
+  {
+    "title": "Unsupervised Domain Adaptation Architecture Search with Self-Training for Land Cover Mapping",
+    "authors": [
+      "Clifford Broni-Bediako",
+      "Junshi Xia",
+      "Naoto Yokoya"
+    ],
+    "date": "2024-6-17",
+    "paper_type": "proceedings-article",
+    "doi": "https://doi.org/10.1109/cvprw63382.2024.00059",
+    "publisher": "IEEE",
+    "funders": [],
+    "link": "https://openaccess.thecvf.com/content/CVPR2024W/EarthVision/html/Broni-Bediako_Unsupervised_Domain_Adaptation_Architecture_Search_with_Self-Training_for_Land_Cover_CVPRW_2024_paper.html",
+    "abstract": ""
+  },
+  {
+    "title": "Quanv4EO: Empowering Earth Observation by Means of Quanvolutional Neural Networks",
+    "authors": [
+      "Alessandro Sebastianelli",
+      "Francesco Mauro",
+      "Giulia Ciabatti",
+      "Dario Spiller",
+      "Bertrand Le Saux",
+      "Paolo Gamba",
+      "Silvia Liberata Ullo"
+    ],
+    "date": "2025",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/tgrs.2025.3556335",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [],
+    "link": "https://ieeexplore.ieee.org/abstract/document/10945995/",
+    "abstract": ""
+  },
+  {
+    "title": "Designing a Classifier for Active Fire Detection From Multispectral Satellite Imagery Using Neural Architecture Search",
+    "authors": [
+      "Amber Cassimon",
+      "Phil Reiter",
+      "Siegfried Mercelis",
+      "Kevin Mets"
+    ],
+    "date": "2025",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/jstars.2025.3556550",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "Fonds Wetenschappelijk Onderzoek",
+      "Vlaamse regering",
+      "Mastering Onboard Vision Intelligence and Quality",
+      "European Union NextGenerationEU"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/10946665/",
+    "abstract": ""
+  },
+  {
+    "title": "Artificial Intelligence to Advance Earth Observation: A review of models, recent trends, and pathways forward",
+    "authors": [
+      "Devis Tuia",
+      "Konrad Schindler",
+      "Beg\u00fcm Demir",
+      "Xiao Xiang Zhu",
+      "Mrinalini Kochupillai",
+      "Sa\u0161o D\u017eeroski",
+      "Jan N. van Rijn",
+      "Holger H. Hoos",
+      "Fabio Del Frate",
+      "Mihai Datcu",
+      "Volker Markl",
+      "Bertrand Le Saux",
+      "Rochelle Schneider",
+      "Gustau Camps-Valls"
+    ],
+    "date": "2025",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/mgrs.2024.3425961",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [],
+    "link": "https://ieeexplore.ieee.org/abstract/document/10669817/",
+    "abstract": ""
+  },
+  {
+    "title": "Object Detection and Image Segmentation with Deep Learning on Earth Observation Data: A Review-Part I: Evolution and Recent Trends",
+    "authors": [
+      "Thorsten Hoeser",
+      "Claudia Kuenzer"
+    ],
+    "date": "2020-5-22",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.3390/rs12101667",
+    "publisher": "MDPI AG",
+    "funders": [],
+    "link": "https://www.mdpi.com/2072-4292/12/10/1667",
+    "abstract": "Deep learning (DL) has great influence on large parts of science and increasingly established itself as an adaptive method for new challenges in the field of Earth observation (EO). Nevertheless, the entry barriers for EO researchers are high due to the dense and rapidly developing field mainly driven by advances in computer vision (CV). To lower the barriers for researchers in EO, this review gives an overview of the evolution of DL with a focus on image segmentation and object detection in convolutional neural networks (CNN). The survey starts in 2012, when a CNN set new standards in image recognition, and lasts until late 2019. Thereby, we highlight the connections between the most important CNN architectures and cornerstones coming from CV in order to alleviate the evaluation of modern DL models. Furthermore, we briefly outline the evolution of the most popular DL frameworks and provide a summary of datasets in EO. By discussing well performing DL architectures on these datasets as well as reflecting on advances made in CV and their impact on future research in EO, we narrow the gap between the reviewed, theoretical concepts from CV and practical application in EO."
+  },
+  {
+    "title": "High-Resolution Mapping of Forest Parameters in Tropical Rainforests Through AutoML Integration of GEDI With Sentinel-1/2, Landsat 8, and ALOS-2 Data",
+    "authors": [
+      "Bo Zhang",
+      "Li Zhang",
+      "Min Yan",
+      "Jian Zuo",
+      "Yuqi Dong",
+      "Bowei Chen"
+    ],
+    "date": "2025",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/jstars.2025.3550878",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "Hainan Provincial Natural Science Foundation of China",
+      "National Natural Science Foundation of China"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/10924716/",
+    "abstract": ""
+  },
+  {
+    "title": "Automated Machine Learning for Satellite Data: Integrating Remote Sensing Pre-trained Models into AutoML Systems",
+    "authors": [
+      "Nelly Rosaura Palacios Salinas",
+      "Mitra Baratchi",
+      "Jan N. van Rijn",
+      "Andreas Vollrath"
+    ],
+    "date": "2021",
+    "paper_type": "book-chapter",
+    "doi": "https://doi.org/10.1007/978-3-030-86517-7_28",
+    "publisher": "Springer International Publishing",
+    "funders": [],
+    "link": "https://link.springer.com/chapter/10.1007/978-3-030-86517-7_28",
+    "abstract": ""
+  },
+  {
+    "title": "Pyeo: A Python package for near-real-time forest cover change detection from Earth observation using machine learning",
+    "authors": [
+      "J.F. Roberts",
+      "R. Mwangi",
+      "F. Mukabi",
+      "J. Njui",
+      "K. Nzioka",
+      "J.K. Ndambiri",
+      "P.C. Bispo",
+      "F.D.B. Espirito-Santo",
+      "Y. Gou",
+      "S.C.M. Johnson",
+      "V. Louis",
+      "A.M. Pacheco-Pascagaza",
+      "P. Rodriguez-Veiga",
+      "K. Tansey",
+      "C. Upton",
+      "C. Robb",
+      "H. Balzter"
+    ],
+    "date": "2022-10",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.cageo.2022.105192",
+    "publisher": "Elsevier BV",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/S0098300422001455",
+    "abstract": ""
+  },
+  {
+    "title": "Object Detection and Image Segmentation with Deep Learning on Earth Observation Data: A Review\u2014Part II: Applications",
+    "authors": [
+      "Thorsten Hoeser",
+      "Felix Bachofer",
+      "Claudia Kuenzer"
+    ],
+    "date": "2020-9-18",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.3390/rs12183053",
+    "publisher": "MDPI AG",
+    "funders": [],
+    "link": "https://www.mdpi.com/2072-4292/12/18/3053",
+    "abstract": "In Earth observation (EO), large-scale land-surface dynamics are traditionally analyzed by investigating aggregated classes. The increase in data with a very high spatial resolution enables investigations on a fine-grained feature level which can help us to better understand the dynamics of land surfaces by taking object dynamics into account. To extract fine-grained features and objects, the most popular deep-learning model for image analysis is commonly used: the convolutional neural network (CNN). In this review, we provide a comprehensive overview of the impact of deep learning on EO applications by reviewing 429 studies on image segmentation and object detection with CNNs. We extensively examine the spatial distribution of study sites, employed sensors, used datasets and CNN architectures, and give a thorough overview of applications in EO which used CNNs. Our main finding is that CNNs are in an advanced transition phase from computer vision to EO. Upon this, we argue that in the near future, investigations which analyze object dynamics with CNNs will have a significant impact on EO research. With a focus on EO applications in this Part II, we complete the methodological review provided in Part I."
+  },
+  {
+    "title": "ExtremeEarth Meets Satellite Data From Space",
+    "authors": [
+      "Desta Haileselassie Hagos",
+      "Theofilos Kakantousis",
+      "Vladimir Vlassov",
+      "Sina Sheikholeslami",
+      "Tianze Wang",
+      "Jim Dowling",
+      "Claudia Paris",
+      "Daniele Marinelli",
+      "Giulio Weikmann",
+      "Lorenzo Bruzzone",
+      "Salman Khaleghian",
+      "Thomas Kraemer",
+      "Torbjorn Eltoft",
+      "Andrea Marinoni",
+      "Despina-Athanasia Pantazi",
+      "George Stamoulis",
+      "Dimitris Bilidas",
+      "George Papadakis",
+      "George Mandilaras",
+      "Manolis Koubarakis",
+      "Antonis Troumpoukis",
+      "Stasinos Konstantopoulos",
+      "Markus Muerth",
+      "Florian Appel",
+      "Andrew Fleming",
+      "Andreas Cziferszky"
+    ],
+    "date": "2021",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/jstars.2021.3107982",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "European Union's Horizon 2020 Research and Innovation Programme"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/9523756/",
+    "abstract": ""
+  },
+  {
+    "title": "Taking Artificial Intelligence Into Space Through Objective Selection of Hyperspectral Earth Observation Applications: To bring the \u201cbrain\u201d close to the \u201ceyes\u201d of satellite missions",
+    "authors": [
+      "Agata M. Wijata",
+      "Michel-Fran\u00e7ois Foulon",
+      "Yves Bobichon",
+      "Raffaele Vitulli",
+      "Marco Celesti",
+      "Roberto Camarero",
+      "Gianluigi Di Cosimo",
+      "Ferran Gascon",
+      "Nicolas Long\u00e9p\u00e9",
+      "Jens Nieke",
+      "Michal Gumiela",
+      "Jakub Nalepa"
+    ],
+    "date": "2023-6",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/mgrs.2023.3269979",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [],
+    "link": "https://ieeexplore.ieee.org/abstract/document/10180082/",
+    "abstract": ""
+  },
+  {
+    "title": "Efficient Object Detection in SAR Images Based on Computation-Aware Neural Architecture Search",
+    "authors": [
+      "Chuanyou Li",
+      "Yifan Li",
+      "Huanyun Hu",
+      "Jiangwei Shang",
+      "Kun Zhang",
+      "Lei Qian",
+      "Kexiang Wang"
+    ],
+    "date": "2022-10-29",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.3390/app122110978",
+    "publisher": "MDPI AG",
+    "funders": [
+      "National Natural Science Foundation of China",
+      "Provincial Natural Science Foundation of Jiangsu, China",
+      "Open Project Program of the State Key Laboratory of Mathematical Engineering and Advanced Computing"
+    ],
+    "link": "https://www.mdpi.com/2076-3417/12/21/10978",
+    "abstract": "Remote sensing techniques are becoming more sophisticated as radar imaging techniques mature. Synthetic aperture radar (SAR) can now provide high-resolution images for day-and-night earth observation. Detecting objects in SAR images is increasingly playing a significant role in a series of applications. In this paper, we address an edge detection problem that applies to scenarios with ship-like objects, where the detection accuracy and efficiency must be considered together. The key to ship detection lies in feature extraction. To efficiently extract features, many existing studies have proposed lightweight neural networks by pruning well-known models in the computer vision field. We found that although different baseline models have been tailored, a large amount of computation is still required. In order to achieve a lighter neural network-based ship detector, we propose Darts_Tiny, a novel differentiable neural architecture search model, to design dedicated convolutional neural networks automatically. Darts_Tiny is customized from Darts. It prunes superfluous operations to simplify the search model and adopts a computation-aware search process to enhance the detection efficiency. The computation-aware search process not only integrates a scheme cutting down the number of channels on purpose but also adopts a synthetic loss function combining the cross-entropy loss and the amount of computation. Comprehensive experiments are conducted to evaluate Darts_Tiny on two open datasets, HRSID and SSDD. Experimental results demonstrate that our neural networks win by at least an order of magnitude in terms of model complexity compared with SOTA lightweight models. A representative model obtained from Darts_Tiny (158 KB model volume, 28 K parameters and 0.58 G computations) yields a faster detection speed such that more than 750 frames per second (800\u00d7800 SAR images) could be achieved when testing on a platform equipped with an Nvidia Tesla V100 and an Intel Xeon Platinum 8260. The lightweight neural networks generated by Darts_Tiny are still competitive in detection accuracy: the F1 score can still reach more than 83 and 90, respectively, on HRSID and SSDD."
+  },
+  {
+    "title": "Hybrid Quantum Deep Learning With Superpixel Encoding for Earth Observation Data Classification",
+    "authors": [
+      "Fan Fan",
+      "Yilei Shi",
+      "Tobias Guggemos",
+      "Xiao Xiang Zhu"
+    ],
+    "date": "2025",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/tnnls.2024.3518108",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "Munich Center for Machine Learning"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/10819477/",
+    "abstract": ""
+  },
+  {
+    "title": "Deep Learning Training and Benchmarks for Earth Observation Images: Data Sets, Features, and Procedures",
+    "authors": [
+      "Mihai Datcu",
+      "Gottfried Schwarz",
+      "Corneliu Octavian Dumitru"
+    ],
+    "date": "2020-3-4",
+    "paper_type": "book-chapter",
+    "doi": "https://doi.org/10.5772/intechopen.90910",
+    "publisher": "IntechOpen",
+    "funders": [],
+    "link": "https://library.oapen.org/handle/20.500.12657/49351",
+    "abstract": ""
+  },
+  {
+    "title": "Yield forecasting with machine learning and small data: What gains for grains?",
+    "authors": [
+      "Michele Meroni",
+      "Fran\u00e7ois Waldner",
+      "Lorenzo Seguini",
+      "Herv\u00e9 Kerdiles",
+      "Felix Rembold"
+    ],
+    "date": "2021-10",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.agrformet.2021.108555",
+    "publisher": "Elsevier BV",
+    "funders": [
+      "Joint Research Centre"
+    ],
+    "link": "https://www.sciencedirect.com/science/article/pii/S0168192321002392",
+    "abstract": ""
+  },
+  {
+    "title": "Enhanced Soil Property Estimations from Earth Observation Data with Differential Evolution-Based Multi-Objective TSK Model",
+    "authors": [
+      "Nikolaos L. Tsakiridis",
+      "Nikiforos Samarinas",
+      "Eleni Kalopesa",
+      "John B. Theocharis",
+      "George C. Zalidis"
+    ],
+    "date": "2024-6-30",
+    "paper_type": "proceedings-article",
+    "doi": "https://doi.org/10.1109/cec60901.2024.10612143",
+    "publisher": "IEEE",
+    "funders": [],
+    "link": "https://ieeexplore.ieee.org/abstract/document/10612143/",
+    "abstract": ""
+  },
+  {
+    "title": "Leveraging performance-based metadata for designing multi-objective NAS strategies for efficient models in Earth Observation",
+    "authors": [
+      "Emre Demir",
+      "Rene Traore",
+      "Andr\u00e9s Camero"
+    ],
+    "date": "2024",
+    "paper_type": "proceedings-article",
+    "doi": "https://doi.org/10.14428/esann/2024.es2024-94",
+    "publisher": "Ciaco - i6doc.com",
+    "funders": [],
+    "link": "https://elib.dlr.de/207631/",
+    "abstract": ""
+  },
+  {
+    "title": "Icesat-2 Data Denoising and Forest Canopy Height Estimation Using Machine Learning",
+    "authors": [
+      "Dan Kong",
+      "Yong Pang"
+    ],
+    "date": "2024",
+    "paper_type": "posted-content",
+    "doi": "https://doi.org/10.2139/ssrn.4838605",
+    "publisher": "Elsevier BV",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/S1569843224006198",
+    "abstract": ""
+  },
+  {
+    "title": "Unraveling near real-time spatial dynamics of population using geographical ensemble learning",
+    "authors": [
+      "Yimeng Song",
+      "Shengbiao Wu",
+      "Bin Chen",
+      "Michelle L. Bell"
+    ],
+    "date": "2024-6",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.jag.2024.103882",
+    "publisher": "Elsevier BV",
+    "funders": [
+      "National Institutes of Health",
+      "National Institute on Minority Health and Health Disparities"
+    ],
+    "link": "https://www.sciencedirect.com/science/article/pii/S156984322400236X",
+    "abstract": ""
+  },
+  {
+    "title": "Efficient Convolutional Neural Architecture Search for Remote Sensing Image Scene Classification",
+    "authors": [
+      "Cheng Peng",
+      "Yangyang Li",
+      "Licheng Jiao",
+      "Ronghua Shang"
+    ],
+    "date": "2021-7",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/tgrs.2020.3020424",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "Key Research and Development Plan of Innovation Chain of Industries in Shaanxi Province",
+      "National Natural Science Foundation of China",
+      "Technology Foundation for Selected Overseas Chinese Scholar in Shaanxi",
+      "Program for Cheung Kong Scholars and Innovative Research Team in University"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/9194271/",
+    "abstract": ""
+  },
+  {
+    "title": "An Automated Machine Learning Framework for Adaptive and Optimized Hyperspectral-Based Land Cover and Land-Use Segmentation",
+    "authors": [
+      "Ava Vali",
+      "Sara Comai",
+      "Matteo Matteucci"
+    ],
+    "date": "2024-7-12",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.3390/rs16142561",
+    "publisher": "MDPI AG",
+    "funders": [],
+    "link": "https://www.mdpi.com/2072-4292/16/14/2561",
+    "abstract": "Hyperspectral imaging holds significant promise in remote sensing applications, particularly for land cover and land-use classification, thanks to its ability to capture rich spectral information. However, leveraging hyperspectral data for accurate segmentation poses critical challenges, including the curse of dimensionality and the scarcity of ground truth data, that hinder the accuracy and efficiency of machine learning approaches. This paper presents a holistic approach for adaptive optimized hyperspectral-based land cover and land-use segmentation using automated machine learning (AutoML). We address the challenges of high-dimensional hyperspectral data through a revamped machine learning pipeline, thus emphasizing feature engineering tailored to hyperspectral classification tasks. We propose a framework that dissects feature engineering into distinct steps, thus allowing for comprehensive model generation and optimization. This framework incorporates AutoML techniques to streamline model selection, hyperparameter tuning, and data versioning, thus ensuring robust and reliable segmentation results. Our empirical investigation demonstrates the efficacy of our approach in automating feature engineering and optimizing model performance, even without extensive ground truth data. By integrating automatic optimization strategies into the segmentation workflow, our approach offers a systematic, efficient, and scalable solution for hyperspectral-based land cover and land-use classification."
+  },
+  {
+    "title": "Cross-modal change detection flood extraction based on convolutional neural network",
+    "authors": [
+      "Xiaoning He",
+      "Shuangcheng Zhang",
+      "Bowei Xue",
+      "Tong Zhao",
+      "Tong Wu"
+    ],
+    "date": "2023-3",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.jag.2023.103197",
+    "publisher": "Elsevier BV",
+    "funders": [
+      "National Natural Science Foundation of China"
+    ],
+    "link": "https://www.sciencedirect.com/science/article/pii/S1569843223000195",
+    "abstract": ""
+  },
+  {
+    "title": "AutoNAS: Automatic Neural Architecture Search for Hyperspectral Unmixing",
+    "authors": [
+      "Zhu Han",
+      "Danfeng Hong",
+      "Lianru Gao",
+      "Bing Zhang",
+      "Min Huang",
+      "Jocelyn Chanussot"
+    ],
+    "date": "2022",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/tgrs.2022.3186480",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "National Natural Science Foundation of China",
+      "MIAI@Grenoble Alpes",
+      "AXA Research Fund"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/9807268/",
+    "abstract": ""
+  },
+  {
+    "title": "Self-Supervised Learning in Remote Sensing: A review",
+    "authors": [
+      "Yi Wang",
+      "Conrad M. Albrecht",
+      "Nassim Ait Ali Braham",
+      "Lichao Mou",
+      "Xiao Xiang Zhu"
+    ],
+    "date": "2022-12",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/mgrs.2022.3198244",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "European Research Council",
+      "Helmholtz Association",
+      "Helmholtz Klimainitiative (HICAM) and Helmholtz Excellent Professorship",
+      "German Federal Ministry of Education and Research",
+      "German Federal Ministry for Economic Affairs and Climate Action"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/9875399/",
+    "abstract": ""
+  },
+  {
+    "title": "Mapping landslides on Earth, Moon, and Mars using satellite imagery and deep learning techniques",
+    "authors": [
+      "Nikhil Prakash",
+      "Valentin Tertius Bickel",
+      "Andrea Manconi"
+    ],
+    "date": "2025",
+    "paper_type": "book-chapter",
+    "doi": "https://doi.org/10.1016/b978-0-12-823868-4.00008-8",
+    "publisher": "Elsevier",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/B9780128238684000088",
+    "abstract": ""
+  },
+  {
+    "title": "Satellite-Based Detection of Farmland Manuring Using Machine Learning Approaches",
+    "authors": [
+      "David Marzi",
+      "Fabio Dell'Acqua"
+    ],
+    "date": "2024-12-19",
+    "paper_type": "posted-content",
+    "doi": "https://doi.org/10.20944/preprints202412.1593.v1",
+    "publisher": "MDPI AG",
+    "funders": [],
+    "link": "https://www.mdpi.com/2072-4292/17/6/1028",
+    "abstract": "In agriculture, manuring offers several benefits, which include improving soil fertility by adding essential nutrients like nitrogen, phosphorus, and potassium. It enhances soil structure, promoting better water retention and aeration, which positively impacts plant growth. Additionally, manuring can suppress certain plant diseases and pests, contributing to healthier crops. However, improper handling and application of manure can pose risks, such as the spread of pathogens and water pollution. To mitigate these risks, it is crucial to follow proper storage and composting practices, but also to observe correct application periods and techniques. Spaceborne Earth observation can contribute to monitor manuring, which helps mapping possible derived risks; however, manure detection from satellite data is still an open problem. The aim of this research work is an automated, Machine Learning (ML-)based approach, to detecting manure application on crop fields in time sequences of space-borne, multi-spectral optical Earth Observation data. Among a group of different spectral indexes extracted from multispectral satellite acquisitions, those most impacted by manure application have been identified, and used to train and test various Machine Learning models. This led to discover that the spectral signature of manure application learnt from the concerned training data cannot be easily transferred to different contexts. On the other hand, integrating thermal data allows to improve accuracy, despite possible thermal to multi-spectral sampling mismatch in time series. The addition of radar data offered instead no significant contribution to system performances. The identified method is the first step towards large-scale, consistent monitoring of manure application to check compliance with environmental regulations."
+  },
+  {
+    "title": "Automatic Design of CNNs via Differentiable Neural Architecture Search for PolSAR Image Classification",
+    "authors": [
+      "Hongwei Dong",
+      "Bin Zou",
+      "Lamei Zhang",
+      "Siyu Zhang"
+    ],
+    "date": "2020-9",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/tgrs.2020.2976694",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "National Natural Science Foundation of China",
+      "Scientific Research Foundation for the Returned Overseas Scholars of Heilongjiang Province",
+      "Aeronautical Science Foundation of China"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/9034477/",
+    "abstract": ""
+  },
+  {
+    "title": "Deep learning for geological hazards analysis: Data, models, applications, and opportunities",
+    "authors": [
+      "Zhengjing Ma",
+      "Gang Mei"
+    ],
+    "date": "2021-12",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.earscirev.2021.103858",
+    "publisher": "Elsevier BV",
+    "funders": [
+      "National Natural Science Foundation of China"
+    ],
+    "link": "https://www.sciencedirect.com/science/article/pii/S0012825221003597",
+    "abstract": ""
+  },
+  {
+    "title": "An Overview of the Special Issue on \u201cPrecision Agriculture Using Hyperspectral Images\u201d",
+    "authors": [
+      "Giovanni Avola",
+      "Alessandro Matese",
+      "Ezio Riggi"
+    ],
+    "date": "2023-4-3",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.3390/rs15071917",
+    "publisher": "MDPI AG",
+    "funders": [],
+    "link": "https://www.mdpi.com/2072-4292/15/7/1917",
+    "abstract": "In precision agriculture systems, remote sensing has played an essential role in crop and environment monitoring, and hyperspectral imaging is a particularly effective tool in this regard [...]"
+  },
+  {
+    "title": "Agricultural cropland mapping using black-and-white aerial photography, Object-Based Image Analysis and Random Forests",
+    "authors": [
+      "M.F.A. Vogels",
+      "S.M. de Jong",
+      "G. Sterk",
+      "E.A. Addink"
+    ],
+    "date": "2017-2",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.jag.2016.09.003",
+    "publisher": "Elsevier BV",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/S0303243416301544",
+    "abstract": ""
+  },
+  {
+    "title": "Cloud computing platforms\u2013based remote sensing big data applications",
+    "authors": [
+      "Swati Suman",
+      "Swati Maurya",
+      "Varsha Pandey",
+      "Prashant K. Srivastava",
+      "Dileep Kumar Gupta"
+    ],
+    "date": "2025",
+    "paper_type": "book-chapter",
+    "doi": "https://doi.org/10.1016/b978-0-443-27372-8.00003-9",
+    "publisher": "Elsevier",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/B9780443273728000039",
+    "abstract": ""
+  },
+  {
+    "title": "Toward Automated Machine Learning-Based Hyperspectral Image Analysis in Crop Yield and Biomass Estimation",
+    "authors": [
+      "Kai-Yun Li",
+      "Raul Sampaio de Lima",
+      "Niall G. Burnside",
+      "Ele Vahtm\u00e4e",
+      "Tiit Kutser",
+      "Karli Sepp",
+      "Victor Henrique Cabral Pinheiro",
+      "Ming-Der Yang",
+      "Ants Vain",
+      "Kalev Sepp"
+    ],
+    "date": "2022-2-24",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.3390/rs14051114",
+    "publisher": "MDPI AG",
+    "funders": [],
+    "link": "https://www.mdpi.com/2072-4292/14/5/1114",
+    "abstract": "The incorporation of autonomous computation and artificial intelligence (AI) technologies into smart agriculture concepts is becoming an expected scientific procedure. The airborne hyperspectral system with its vast area coverage, high spectral resolution, and varied narrow-band selection is an excellent tool for crop physiological characteristics and yield prediction. However, the extensive and redundant three-dimensional (3D) cube data processing and computation have made the popularization of this tool a challenging task. This research integrated two important open-sourced systems (R and Python) combined with automated hyperspectral narrowband vegetation index calculation and the state-of-the-art AI-based automated machine learning (AutoML) technology to estimate yield and biomass, based on three crop categories (spring wheat, pea and oat mixture, and spring barley with red clover) with multifunctional cultivation practices in northern Europe and Estonia. Our study showed the estimated capacity of the empirical AutoML regression model was significant. The best coefficient of determination (R2) and normalized root mean square error (NRMSE) for single variety planting wheat were 0.96 and 0.12 respectively; for mixed peas and oats, they were 0.76 and 0.18 in the booting to heading stage, while for mixed legumes and spring barley, they were 0.88 and 0.16 in the reproductive growth stages. In terms of straw mass estimation, R2 was 0.96, 0.83, and 0.86, and NRMSE was 0.12, 0.24, and 0.33 respectively. This research contributes to, and confirms, the use of the AutoML framework in hyperspectral image analysis to increase implementation flexibility and reduce learning costs under a variety of agricultural resource conditions. It delivers expert yield and straw mass valuation two months in advance before harvest time for decision-makers. This study also highlights that the hyperspectral system provides economic and environmental benefits and will play a critical role in the construction of sustainable and intelligent agriculture techniques in the upcoming years."
+  },
+  {
+    "title": "Regional Soil Moisture Estimation Leveraging Multi-Source Data Fusion and Automated Machine Learning",
+    "authors": [
+      "Shenglin Li",
+      "Pengyuan Zhu",
+      "Ni Song",
+      "Caixia Li",
+      "Jinglei Wang"
+    ],
+    "date": "2025-2-27",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.3390/rs17050837",
+    "publisher": "MDPI AG",
+    "funders": [
+      "National Key Research and Development Program of China"
+    ],
+    "link": "https://www.mdpi.com/2072-4292/17/5/837",
+    "abstract": "Soil moisture (SM) monitoring in farmland at a regional scale is crucial for precision irrigation management and ensuring food security. However, existing methods for SM estimation encounter significant challenges related to accuracy, generalizability, and automation. This study proposes an integrated data fusion method to systematically assess the potential of three automated machine learning (AutoML) frameworks\u2014tree-based pipeline optimization tool (TPOT), AutoGluon, and H2O AutoML\u2014in retrieving SM. To evaluate the impact of input variables on estimation accuracy, six input scenarios were designed: multispectral data (MS), thermal infrared data (TIR), MS combined with TIR, MS with auxiliary data, TIR with auxiliary data, and a comprehensive combination of MS, TIR, and auxiliary data. The research was conducted in a winter wheat cultivation area within the People\u2019s Victory Canal Irrigation Area, focusing on the 0\u201340 cm soil layer. The results revealed that the scenario incorporating all data types (MS + TIR + auxiliary) achieved the highest retrieval accuracy. Under this scenario, all three AutoML frameworks demonstrated optimal performance. AutoGluon demonstrated superior performance in most scenarios, particularly excelling in the MS + TIR + auxiliary data scenario. It achieved the highest retrieval accuracy with a Pearson correlation coefficient (R) value of 0.822, root mean square error (RMSE) of 0.038 cm3/cm3, and relative root mean square error (RRMSE) of 16.46%. This study underscores the critical role of input data types and fusion strategies in enhancing SM estimation accuracy and highlights the significant advantages of AutoML frameworks for regional-scale SM retrieval. The findings offer a robust technical foundation and theoretical guidance for advancing precision irrigation management and efficient SM monitoring."
+  },
+  {
+    "title": "Compact Neural Architecture Search for Local Climate Zones Classification",
+    "authors": [
+      "Rene Traore",
+      "Andr\u00e9s Camero",
+      "Xiaoxiang Zhu"
+    ],
+    "date": "2021",
+    "paper_type": "proceedings-article",
+    "doi": "https://doi.org/10.14428/esann/2021.es2021-55",
+    "publisher": "Ciaco - i6doc.com",
+    "funders": [],
+    "link": "https://elib.dlr.de/145623/",
+    "abstract": ""
+  },
+  {
+    "title": "An Automated Machine Learning Approach to the Retrieval of Daily Soil Moisture in South Korea Using Satellite Images, Meteorological Data, and Digital Elevation Model",
+    "authors": [
+      "Nari Kim",
+      "Soo-Jin Lee",
+      "Eunha Sohn",
+      "Mija Kim",
+      "Seonkyeong Seong",
+      "Seung Hee Kim",
+      "Yangwon Lee"
+    ],
+    "date": "2024-9-18",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.3390/w16182661",
+    "publisher": "MDPI AG",
+    "funders": [
+      "the R&amp;D Program of the Korea Meteorological Administration",
+      "National Research Foundation of Korea (NRF)",
+      "Korea Ministry of Environment (MOE)"
+    ],
+    "link": "https://www.mdpi.com/2073-4441/16/18/2661",
+    "abstract": "Soil moisture is a critical parameter that significantly impacts the global energy balance, including the hydrologic cycle, land\u2013atmosphere interactions, soil evaporation, and plant growth. Currently, soil moisture is typically measured by installing sensors in the ground or through satellite remote sensing, with data retrieval facilitated by reanalysis models such as the European Centre for Medium-Range Weather Forecasts (ECMWF) Reanalysis 5 (ERA5) and the Global Land Data Assimilation System (GLDAS). However, the suitability of these methods for capturing local-scale variabilities is insufficiently validated, particularly in regions like South Korea, where land surfaces are highly complex and heterogeneous. In contrast, artificial intelligence (AI) approaches have shown promising potential for soil moisture retrieval at the local scale but have rarely demonstrated substantial products for spatially continuous grids. This paper presents the retrieval of daily soil moisture (SM) over a 500 m grid for croplands in South Korea using random forest (RF) and automated machine learning (AutoML) models, leveraging satellite images and meteorological data. In a blind test conducted for the years 2013\u20132019, the AutoML-based SM model demonstrated optimal performance, achieving a root mean square error of 2.713% and a correlation coefficient of 0.940. Furthermore, the performance of the AutoML model remained consistent across all the years and months, as well as under extreme weather conditions, indicating its reliability and stability. Comparing the soil moisture data derived from our AutoML model with the reanalysis data from sources such as the European Space Agency Climate Change Initiative (ESA CCI), GLDAS, the Local Data Assimilation and Prediction System (LDAPS), and ERA5 for the South Korea region reveals that our AutoML model provides a much better representation. These experiments confirm the feasibility of AutoML-based SM retrieval, particularly for local agrometeorological applications in regions with heterogeneous land surfaces like South Korea."
+  },
+  {
+    "title": "Common Practices and Taxonomy in Deep Multiview Fusion for Remote Sensing Applications",
+    "authors": [
+      "Francisco Mena",
+      "Diego Arenas",
+      "Marlon Nuske",
+      "Andreas Dengel"
+    ],
+    "date": "2024",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/jstars.2024.3361556",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "University of Kaiserslautern-Landau"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/10418966/",
+    "abstract": ""
+  },
+  {
+    "title": "SARNas: A Hardware-Aware SAR Target Detection Algorithm via Multiobjective Neural Architecture Search",
+    "authors": [
+      "Wentian Du",
+      "Jie Chen",
+      "Chaochen Zhang",
+      "Po Zhao",
+      "Huiyao Wan",
+      "Zheng Zhou",
+      "Yice Cao",
+      "Zhixiang Huang",
+      "Yingsong Li",
+      "Bocai Wu"
+    ],
+    "date": "2023",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/tgrs.2023.3292618",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "National Natural Science Foundation of China",
+      "Natural Science Foundation of Anhui Province",
+      "China Postdoctoral Science Foundation"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/10173551/",
+    "abstract": ""
+  },
+  {
+    "title": "LANDSCAPE OF NEURAL ARCHITECTURE SEARCH ACROSS SENSORS: HOW\nMUCH DO THEY DIFFER ?",
+    "authors": [
+      "K. R. Traor\u00e9",
+      "A. Camero",
+      "X. X. Zhu"
+    ],
+    "date": "2022-5-17",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.5194/isprs-annals-v-3-2022-217-2022",
+    "publisher": "Copernicus GmbH",
+    "funders": [],
+    "link": "https://arxiv.org/abs/2201.06321",
+    "abstract": "Abstract. With the rapid rise of neural architecture search, the ability to understand its complexity from the perspective of a search algorithm is desirable. Recently, Traor\u00e9 et al. have proposed the framework of Fitness Landscape Footprint to help describe and compare neural architecture search problems. It attempts at describing why a search strategy might be successful, struggle or fail on a target task. Our study leverages this methodology in the context of searching across sensors, including sensor data fusion. In particular, we apply the Fitness Landscape Footprint to the real-world image classification problem of So2Sat LCZ42, in order to identify the most beneficial sensor to our neural network hyper-parameter optimization problem. From the perspective of distributions of fitness, our findings indicate a similar behaviour of the CNN search space for all sensors: the longer the training time, the larger the overall fitness, and more flatness in the landscapes (less ruggedness and deviation). Regarding sensors, the better the fitness they enable (Sentinel-2), the better the search trajectories (smoother, higher persistence). Results also indicate very similar search behaviour for sensors that can be decently fitted by the search space (Sentinel-2 and fusion).\n                    "
+  },
+  {
+    "title": "PAIRS AutoGeo: an Automated Machine Learning Framework for Massive Geospatial Data",
+    "authors": [
+      "Wang Zhou",
+      "Levente J. Klein",
+      "Siyuan Lu"
+    ],
+    "date": "2020-12-10",
+    "paper_type": "proceedings-article",
+    "doi": "https://doi.org/10.1109/bigdata50022.2020.9378036",
+    "publisher": "IEEE",
+    "funders": [],
+    "link": "https://ieeexplore.ieee.org/abstract/document/9378036/",
+    "abstract": ""
+  },
+  {
+    "title": "Automated lithological mapping by integrating spectral enhancement techniques and machine learning algorithms using AVIRIS-NG hyperspectral data in Gold-bearing granite-greenstone rocks in Hutti, India",
+    "authors": [
+      "Chandan Kumar",
+      "Snehamoy Chatterjee",
+      "Thomas Oommen",
+      "Arindam Guha"
+    ],
+    "date": "2020-4",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.jag.2019.102006",
+    "publisher": "Elsevier BV",
+    "funders": [
+      "National Aeronautics and Space Administration"
+    ],
+    "link": "https://www.sciencedirect.com/science/article/pii/S030324341930858X",
+    "abstract": ""
+  },
+  {
+    "title": "Incorporating of spatial effects in forest canopy height mapping using airborne, spaceborne lidar and spatial continuous remote sensing data",
+    "authors": [
+      "Wankun Min",
+      "Yumin Chen",
+      "Wenli Huang",
+      "John P. Wilson",
+      "Hao Tang",
+      "Meiyu Guo",
+      "Rui Xu"
+    ],
+    "date": "2024-9",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.jag.2024.104123",
+    "publisher": "Elsevier BV",
+    "funders": [
+      "Ministry of Science and Technology of the People's Republic of China",
+      "National Natural Science Foundation of China"
+    ],
+    "link": "https://www.sciencedirect.com/science/article/pii/S1569843224004771",
+    "abstract": ""
+  },
+  {
+    "title": "Hyper-ES2T: Efficient Spatial\u2013Spectral Transformer for the classification of hyperspectral remote sensing images",
+    "authors": [
+      "Wenxuan Wang",
+      "Leiming Liu",
+      "Tianxiang Zhang",
+      "Jiachen Shen",
+      "Jing Wang",
+      "Jiangyun Li"
+    ],
+    "date": "2022-9",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.jag.2022.103005",
+    "publisher": "Elsevier BV",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/S1569843222001935",
+    "abstract": ""
+  },
+  {
+    "title": "Deep Learning for Time Series Classification and Extrinsic Regression: A Current Survey",
+    "authors": [
+      "Navid Mohammadi Foumani",
+      "Lynn Miller",
+      "Chang Wei Tan",
+      "Geoffrey I. Webb",
+      "Germain Forestier",
+      "Mahsa Salehi"
+    ],
+    "date": "2024-4-25",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1145/3649448",
+    "publisher": "Association for Computing Machinery (ACM)",
+    "funders": [
+      "Australian Government Research Training Program"
+    ],
+    "link": "https://dl.acm.org/doi/abs/10.1145/3649448",
+    "abstract": "Time Series Classification and Extrinsic Regression are important and challenging machine learning tasks. Deep learning has revolutionized natural language processing and computer vision and holds great promise in other fields such as time series analysis where the relevant features must often be abstracted from the raw data but are not known a priori. This article surveys the current state of the art in the fast-moving field of deep learning for time series classification and extrinsic regression. We review different network architectures and training methods used for these tasks and discuss the challenges and opportunities when applying deep learning to time series data. We also summarize two critical applications of time series classification and extrinsic regression, human activity recognition and satellite earth observation."
+  },
+  {
+    "title": "Model Compression Based on SAR-Optical Image Mapping Task",
+    "authors": [
+      "Sijie Wang",
+      "Jianjiang Zhou",
+      "Tianzhu Yu"
+    ],
+    "date": "2022-11",
+    "paper_type": "proceedings-article",
+    "doi": "https://doi.org/10.1109/icsps58776.2022.00088",
+    "publisher": "IEEE",
+    "funders": [],
+    "link": "https://ieeexplore.ieee.org/abstract/document/10218654/",
+    "abstract": ""
+  },
+  {
+    "title": "Quality Assurance Framework Development Based on Six New ECV Data Products to Enhance User Confidence for Climate Applications",
+    "authors": [
+      "Joanne Nightingale",
+      "Klaas Folkert Boersma",
+      "Jan-Peter Muller",
+      "Steven Compernolle",
+      "Jean-Christopher Lambert",
+      "Simon Blessing",
+      "Ralf Giering",
+      "Nadine Gobron",
+      "Isabelle De Smedt",
+      "Pierre Coheur",
+      "Maya George",
+      "J\u00f6rg Schulz",
+      "Alexander Wood"
+    ],
+    "date": "2018-8-9",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.3390/rs10081254",
+    "publisher": "MDPI AG",
+    "funders": [
+      "Seventh Framework Programme"
+    ],
+    "link": "https://www.mdpi.com/2072-4292/10/8/1254",
+    "abstract": "Data from Earth observation (EO) satellites are increasingly used to monitor the environment, understand variability and change, inform evaluations of climate model forecasts, and manage natural resources. Policymakers are progressively relying on the information derived from these datasets to make decisions on mitigating and adapting to climate change. These decisions should be evidence based, which requires confidence in derived products, as well as the reference measurements used to calibrate, validate, or inform product development. In support of the European Union\u2019s Earth Observation Programmes Copernicus Climate Change Service (C3S), the Quality Assurance for Essential Climate Variables (QA4ECV) project fulfilled a gap in the delivery of climate quality satellite-derived datasets, by prototyping a generic system for the implementation and evaluation of quality assurance (QA) measures for satellite-derived ECV climate data record products. The project demonstrated the QA system on six new long-term, climate quality ECV data records for surface albedo, leaf area index (LAI), fraction of absorbed photosynthetically active radiation (FAPAR), nitrogen dioxide (NO2), formaldehyde (HCHO), and carbon monoxide (CO). The provision of standardised QA information provides data users with evidence-based confidence in the products and enables judgement on the fitness-for-purpose of various ECV data products and their specific applications."
+  },
+  {
+    "title": "RSBNet: One-shot neural architecture search for a backbone network in remote sensing image recognition",
+    "authors": [
+      "Cheng Peng",
+      "Yangyang Li",
+      "Ronghua Shang",
+      "Licheng Jiao"
+    ],
+    "date": "2023-6",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.neucom.2023.03.046",
+    "publisher": "Elsevier BV",
+    "funders": [
+      "National Natural Science Foundation of China",
+      "Natural Science Basic Research Program of Shaanxi Province"
+    ],
+    "link": "https://www.sciencedirect.com/science/article/pii/S0925231223002916",
+    "abstract": ""
+  },
+  {
+    "title": "Downscaled high spatial resolution images from automated machine learning for assessment of urban structure effects on land surface temperatures",
+    "authors": [
+      "Xue Zhong",
+      "Lihua Zhao",
+      "Peng Ren",
+      "Xiang Zhang",
+      "Chaobin Luo",
+      "Yingtan Li",
+      "Jie Wang"
+    ],
+    "date": "2024-10",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.buildenv.2024.111934",
+    "publisher": "Elsevier BV",
+    "funders": [
+      "National Natural Science Foundation of China",
+      "State Key Laboratory of Subtropical Building Science",
+      "Guangdong Provincial Natural Science Foundation",
+      "Fundamental Research Funds for the Central Universities"
+    ],
+    "link": "https://www.sciencedirect.com/science/article/pii/S0360132324007765",
+    "abstract": ""
+  },
+  {
+    "title": "Estimating soil moisture content under grassland with hyperspectral data using radiative transfer modelling and machine learning",
+    "authors": [
+      "Veronika D\u00f6pper",
+      "Alby Duarte Rocha",
+      "Katja Berger",
+      "Tobias Gr\u00e4nzig",
+      "Jochem Verrelst",
+      "Birgit Kleinschmit",
+      "Michael F\u00f6rster"
+    ],
+    "date": "2022-6",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.jag.2022.102817",
+    "publisher": "Elsevier BV",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/S156984322200019X",
+    "abstract": ""
+  },
+  {
+    "title": "WHU-OHS: A benchmark dataset for large-scale Hersepctral Image classification",
+    "authors": [
+      "Jiayi Li",
+      "Xin Huang",
+      "Lilin Tu"
+    ],
+    "date": "2022-9",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.jag.2022.103022",
+    "publisher": "Elsevier BV",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/S1569843222002102",
+    "abstract": ""
+  },
+  {
+    "title": "The OPS-SAT case: A data-centric competition for onboard satellite image classification",
+    "authors": [
+      "Gabriele Meoni",
+      "Marcus M\u00e4rtens",
+      "Dawa Derksen",
+      "Kenneth See",
+      "Toby Lightheart",
+      "Anthony S\u00e9cher",
+      "Arnaud Martin",
+      "David Rijlaarsdam",
+      "Vincenzo Fanizza",
+      "Dario Izzo"
+    ],
+    "date": "2024-3-16",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1007/s42064-023-0196-y",
+    "publisher": "Springer Science and Business Media LLC",
+    "funders": [],
+    "link": "https://link.springer.com/article/10.1007/s42064-023-0196-y",
+    "abstract": "While novel artificial intelligence and machine learning techniques are evolving and disrupting established terrestrial technologies at an unprecedented speed, their adaptation onboard satellites is seemingly lagging. A major hindrance in this regard is the need for high-quality annotated data for training such systems, which makes the development process of machine learning solutions costly, time-consuming, and inefficient. This paper presents \u201cthe OPS-SAT case\u201d, a novel data-centric competition that seeks to address these challenges. The powerful computational capabilities of the European Space Agency\u2019s OPS-SAT satellite are utilized to showcase the design of machine learning systems for space by using only the small amount of available labeled data, relying on the widely adopted and freely available open-source software. The generation of a suitable dataset, design and evaluation of a public data-centric competition, and results of an onboard experimental campaign by using the competition winners\u2019 machine learning model directly on OPS-SAT are detailed. The results indicate that adoption of open standards and deployment of advanced data augmentation techniques can retrieve meaningful onboard results comparatively quickly, simplifying and expediting an otherwise prolonged development period."
+  },
+  {
+    "title": "Mapping of Rumex obtusifolius in nature conservation areas using very high resolution UAV imagery and deep learning",
+    "authors": [
+      "Jo\u00e3o Valente",
+      "Santosh Hiremath",
+      "Mar Ariza-Sent\u00eds",
+      "Marty Doldersum",
+      "Lammert Kooistra"
+    ],
+    "date": "2022-8",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.jag.2022.102864",
+    "publisher": "Elsevier BV",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/S1569843222000668",
+    "abstract": ""
+  },
+  {
+    "title": "DenseNetx: Efficient DenseNets for Remote Scene Classification without Pretraining",
+    "authors": [
+      "Russo Mohammad Ashraf Uddin",
+      "Tien-Dat Tran",
+      "Ge Cao",
+      "Kang-Hyun Jo"
+    ],
+    "date": "2023-6-19",
+    "paper_type": "proceedings-article",
+    "doi": "https://doi.org/10.1109/isie51358.2023.10228170",
+    "publisher": "IEEE",
+    "funders": [
+      "National Research Foundation of Korea",
+      "Ministry of Education"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/10228170/",
+    "abstract": ""
+  },
+  {
+    "title": "A Novel Method for Rapid Orbital Deployment of ML for Space Applications",
+    "authors": [
+      "Sam Hall",
+      "Prem Prakash Jayaraman",
+      "Peter Moar"
+    ],
+    "date": "2024-7-15",
+    "paper_type": "proceedings-article",
+    "doi": "https://doi.org/10.1109/scc61854.2024.00007",
+    "publisher": "IEEE",
+    "funders": [],
+    "link": "https://ieeexplore.ieee.org/abstract/document/10794944/",
+    "abstract": ""
+  },
+  {
+    "title": "GenCo: An Auxiliary Generator from Contrastive Learning for Enhanced Few-Shot Learning in Remote Sensing",
+    "authors": [
+      "Jing Wu",
+      "Naira Hovakimyan",
+      "Jennifer Hobbs"
+    ],
+    "date": "2023-9-28",
+    "paper_type": "book-chapter",
+    "doi": "https://doi.org/10.3233/faia230574",
+    "publisher": "IOS Press",
+    "funders": [],
+    "link": "https://ebooks.iospress.nl/doi/10.3233/FAIA230574",
+    "abstract": "Classifying and segmenting patterns from a limited number of examples is a significant challenge in remote sensing and earth observation due to the difficulty in acquiring accurately labeled data in large quantities. Previous studies have shown that meta-learning, which involves episodic training on query and support sets, is a promising approach. However, there has been little attention paid to direct fine-tuning techniques. This paper repurposes contrastive learning as a pre-training method for few-shot learning for classification and semantic segmentation tasks. Specifically, we introduce a generator-based contrastive learning framework (GenCo) that pre-trains backbones and simultaneously explores variants of feature samples. In fine-tuning, the auxiliary generator can be used to enrich limited labeled data samples in feature space. We demonstrate the effectiveness of our method in improving few-shot learning performance on two key remote sensing datasets: Agriculture-Vision and EuroSAT. Empirically, our approach outperforms purely supervised training on the nearly 95,000 images in Agriculture-Vision for both classification and semantic segmentation tasks. Similarly, the proposed few-shot method achieves better results on the land-cover classification task on EuroSAT compared to the results obtained from fully supervised model training on the dataset."
+  },
+  {
+    "title": "A physics-guided automated machine learning approach for obtaining surface radiometric temperatures on sunny days based on UAV-derived images",
+    "authors": [
+      "Xue Zhong",
+      "Lihua Zhao",
+      "Peng Ren",
+      "Xiang Zhang",
+      "Jie Wang"
+    ],
+    "date": "2024-10",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.compenvurbsys.2024.102175",
+    "publisher": "Elsevier BV",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/S0198971524001042",
+    "abstract": ""
+  },
+  {
+    "title": "Object-Level Semantic Segmentation on the High-Resolution Gaofen-3 FUSAR-Map Dataset",
+    "authors": [
+      "Xianzheng Shi",
+      "Shilei Fu",
+      "Jin Chen",
+      "Feng Wang",
+      "Feng Xu"
+    ],
+    "date": "2021",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/jstars.2021.3063797",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "National Natural Science Foundation of China"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/9369836/",
+    "abstract": ""
+  },
+  {
+    "title": "Remote sensing visual question answering with a self-attention multi-modal encoder",
+    "authors": [
+      "Jo\u00e3o Daniel Silva",
+      "Jo\u00e3o Magalh\u00e3es",
+      "Devis Tuia",
+      "Bruno Martins"
+    ],
+    "date": "2022-11",
+    "paper_type": "proceedings-article",
+    "doi": "https://doi.org/10.1145/3557918.3565874",
+    "publisher": "ACM",
+    "funders": [
+      "Funda\u00e7\u00e3o para a Ci\u00eancia e Tecnologia",
+      "COST Action Multi3Generation",
+      "PIDDAC programme"
+    ],
+    "link": "https://dl.acm.org/doi/abs/10.1145/3557918.3565874",
+    "abstract": ""
+  },
+  {
+    "title": "MVPNet: A multi-scale voxel-point adaptive fusion network for point cloud semantic segmentation in urban scenes",
+    "authors": [
+      "Huchen Li",
+      "Haiyan Guan",
+      "Lingfei Ma",
+      "Xiangda Lei",
+      "Yongtao Yu",
+      "Hanyun Wang",
+      "Mahmoud Reza Delavar",
+      "Jonathan Li"
+    ],
+    "date": "2023-8",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.jag.2023.103391",
+    "publisher": "Elsevier BV",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/S1569843223002157",
+    "abstract": ""
+  },
+  {
+    "title": "AUTOMATIC FLOOD DETECTION FROM SENTINEL-1 DATA USING DEEP LEARNING ARCHITECTURES",
+    "authors": [
+      "B. Ghosh",
+      "S. Garg",
+      "M. Motagh"
+    ],
+    "date": "2022-5-17",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.5194/isprs-annals-v-3-2022-201-2022",
+    "publisher": "Copernicus GmbH",
+    "funders": [],
+    "link": "https://gfzpublic.gfz-potsdam.de/pubman/faces/ViewItemFullPage.jsp?itemId=item_5013979_1",
+    "abstract": "Abstract. Floods are the most frequent, costliest natural disasters having devastating consequences on people, infrastructure, and the ecosystem. During flood events near real-time satellite imagery has proven to be an efficient management tool for disaster management authorities. However one of the challenges is accurate classification and segmentation of flooded water. The generalization ability of binary segmentation using threshold split-based method, is limited due to the effects of backscatter, geographical area, and time of image collection. Recent advancements in deep learning algorithms for image segmentation has demonstrated excellent potential for improving flood detection. However, there have been limited studies in this domain due to the lack of large scale labeled flood event dataset. In this paper, we present two deep learning approaches, first using a UNet and second, using a Feature Pyramid Network (FPN), both based on a backbone of EfficientNet-B7, by leveraging publicly available Sentinel-1 dataset provided jointly by NASA Interagency Implementation and Advanced Concepts Team, and IEEE GRSS Earth Science Informatics Technical Committee. The dataset covers flood events from Nebraska, North Alabama, Bangladesh, Red River North, and Florence. The performances of both networks were evaluated with multiple training, testing, and validation. During testing, the UNet model achieved the meanIOU score of 75.06% and the FPN model achieved the meanIOU score of 75.76%.\n                    "
+  },
+  {
+    "title": "Multilevel intuitive attention neural network for airborne LiDAR point cloud semantic segmentation",
+    "authors": [
+      "Ziyang Wang",
+      "Hui Chen",
+      "Jing Liu",
+      "Jiarui Qin",
+      "Yehua Sheng",
+      "Lin Yang"
+    ],
+    "date": "2024-8",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1016/j.jag.2024.104020",
+    "publisher": "Elsevier BV",
+    "funders": [],
+    "link": "https://www.sciencedirect.com/science/article/pii/S1569843224003741",
+    "abstract": ""
+  },
+  {
+    "title": "Natural Embedding of the Stokes Parameters of Polarimetric Synthetic Aperture Radar Images in a Gate-Based Quantum Computer",
+    "authors": [
+      "Soronzonbold Otgonbaatar",
+      "Mihai Datcu"
+    ],
+    "date": "2022",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/tgrs.2021.3110056",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [],
+    "link": "https://ieeexplore.ieee.org/abstract/document/9538388/",
+    "abstract": ""
+  },
+  {
+    "title": "Spectral\u2013Spatial Transformer Network for Hyperspectral Image Classification: A Factorized Architecture Search Framework",
+    "authors": [
+      "Zilong Zhong",
+      "Ying Li",
+      "Lingfei Ma",
+      "Jonathan Li",
+      "Wei-Shi Zheng"
+    ],
+    "date": "2022",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/tgrs.2021.3115699",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "China Postdoctoral Science Foundation",
+      "Guangdong Natural Science Foundation"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/9565208/",
+    "abstract": ""
+  },
+  {
+    "title": "Methods for Small, Weak Object Detection in Optical High-Resolution Remote Sensing Images: A survey of advances and challenges",
+    "authors": [
+      "Wei Han",
+      "Jia Chen",
+      "Lizhe Wang",
+      "Ruyi Feng",
+      "Fengpeng Li",
+      "Lin Wu",
+      "Tian Tian",
+      "Jining Yan"
+    ],
+    "date": "2021-12",
+    "paper_type": "journal-article",
+    "doi": "https://doi.org/10.1109/mgrs.2020.3041450",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "funders": [
+      "National Natural Science Foundation of China",
+      "Fundamental Research Funds for the Central Universities"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/9335501/",
+    "abstract": ""
+  }
+]
