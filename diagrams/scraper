@@ -15,3 +15,4 @@ flowchart LR
       F --> G{"Google Scholar and Crossref title same?"}
       G -- no --> B
       G -- yes --> H["Save paper in papers.json"]
+      H --> B

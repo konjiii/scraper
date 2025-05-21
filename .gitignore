@@ -3,3 +3,5 @@
 test.json
 test.py
 __pycache__
+.venv
+.ruff_cache
